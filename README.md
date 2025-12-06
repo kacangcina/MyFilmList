@@ -1,18 +1,45 @@
-## Getting Started
+# MyMovieLog - Java Movie Tracker App
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+MyMovieLog adalah aplikasi desktop berbasis Java GUI yang memungkinkan pengguna untuk mencari film, melihat detail, dan menyimpannya ke dalam daftar tontonan (Watchlist) pribadi.
 
-## Folder Structure
+Aplikasi ini dibangun menggunakan **Java Swing** dan terintegrasi dengan **TMDB (The Movie Database) API** untuk mendapatkan data film secara *real-time*.
 
-The workspace contains two folders by default, where:
+## Fitur Utama
+* **Pencarian Film** 
+* Mencari judul film menggunakan data langsung dari TMDB API.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+* **Detail Film** 
+* Menampilkan sinopsis, tanggal rilis, rating, dan poster film.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+* **Watchlist** 
+* Menyimpan film yang ingin ditonton ke dalam daftar pribadi.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+* **Persistensi Data** 
+* Data Watchlist tersimpan secara permanen di komputer lokal (tidak hilang saat aplikasi ditutup).
 
-## Dependency Management
+* **Async Loading** 
+* Proses pengambilan data dan gambar berjalan di latar belakang tanpa membekukan antarmuka (GUI).
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+* **Menggunakan API** 
+* Menggunakan API dari [The Movie Database (TMDB)](https://www.themoviedb.org/documentation/api) sebagai sumber database fim.
+
+## Konsep Pemrograman yang Diterapkan
+Proyek ini dibuat untuk mendemonstrasikan pemahaman mendalam tentang materi inti Java tanpa ketergantungan pada library pihak ketiga (seperti Gson atau Jackson):
+
+1.  **Java GUI (Swing):** Menggunakan `JFrame`, `BorderLayout`, `JSplitPane`, dan `JList` untuk antarmuka yang responsif.
+2.  **Networking & API:** Menggunakan `HttpURLConnection` untuk melakukan request GET ke endpoint REST API.
+3.  **Advanced String Manipulation:** Melakukan *parsing* data JSON secara manual menggunakan manipulasi `String` dan `Regex` (tanpa library JSON external).
+4.  **Multithreading:** Mengimplementasikan `Thread` dan `SwingUtilities.invokeLater` untuk menangani proses I/O (network request) agar tidak memblokir *Main Thread*.
+5.  **Java I/O & Serialization:** Menggunakan `ObjectOutputStream` dan `Serializable` untuk menyimpan objek Watchlist ke file lokal (`.dat`).
+6.  **Collections & Generics:** Penggunaan `ArrayList<Movie>` dan `DefaultListModel` untuk manajemen data yang efisien.
+7.  **Exception Handling:** Penanganan error yang robust untuk koneksi jaringan dan operasi file.
+
+## Persyaratan Sistem
+* Java Development Kit (JDK) 8 atau lebih baru.
+* Koneksi Internet (untuk mengambil data API).
+
+## Project PBO Kelompok 11
+Angota:
+1. Agischa Nur Aghianingtyas
+2. Wantech Arofiq Huda F.
+3. Revan Alifian Zhafran
