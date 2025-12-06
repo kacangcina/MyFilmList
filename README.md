@@ -1,4 +1,4 @@
-# MyMovieLog - Java Movie Tracker App
+# MyFilmList - Java Movie Tracker App
 
 MyMovieLog adalah aplikasi desktop berbasis Java GUI yang memungkinkan pengguna untuk mencari film, melihat detail, dan menyimpannya ke dalam daftar tontonan (Watchlist) pribadi.
 
